@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<!-- <p>navbar works!</p> -->
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div>
+            <a class="navbar-brand" [routerLink]="['/']">Library</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Home</a></li>
+            <li><a [routerLink]="['/book-list']" routerLinkActive="router-link-active">Book List</a></li>
+            <li><a [routerLink]="['/add-book']" routerLinkActive="router-link-active">Add Book</a></li>
+        </ul>
+
+    </div>
+</nav>
