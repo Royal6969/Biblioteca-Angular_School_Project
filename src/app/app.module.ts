@@ -12,8 +12,13 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material.module';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +38,8 @@ import { AngularMaterialModule } from './modules/angular-material.module';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
