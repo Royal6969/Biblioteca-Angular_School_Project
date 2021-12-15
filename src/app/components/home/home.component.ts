@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RealTimeDBService } from 'src/app/services/real-time-db.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  courseTitle = "Library";
+  // favourite books
+  favouriteBooks: any;
 
-  constructor() { }
-
-  clicked() {
-    console.log("h2 clicked!");
-  }
+  constructor(
+    private realTimeDatabaseService: RealTimeDBService
+  ) { }
 
   ngOnInit(): void {
+    this.realTimeDatabaseService.getFavouriteBooks()
+      .subscribe((favBooks) => {
+        this.favouriteBooks = favBooks;
+        console.log(favBooks);
+      })
   }
 
 }

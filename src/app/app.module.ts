@@ -16,8 +16,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material.module';
+import { RealTimeDBService } from './services/real-time-db.service';
 
 
 @NgModule({
@@ -39,9 +44,13 @@ import { AngularMaterialModule } from './modules/angular-material.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase, 'library'), // optionally provide a custom firebase application name
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    RealTimeDBService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
