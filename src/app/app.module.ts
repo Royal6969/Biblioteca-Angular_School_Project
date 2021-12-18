@@ -23,6 +23,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material.module';
 import { RealTimeDBService } from './services/real-time-db.service';
+import { FirestoreService } from './services/firestore.service';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { RealTimeDBService } from './services/real-time-db.service';
     AngularFireDatabaseModule
   ],
   providers: [
-    RealTimeDBService
+    RealTimeDBService,
+    FirestoreService
   ],
   bootstrap: [AppComponent]
 })

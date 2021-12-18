@@ -1,0 +1,52 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+li{ list-style: none; }
+td{ padding-right: 50px; }
+
+.full-width { width: 100%; }
+.half-width { width: 50%; }
+.third-width{ width: 75%; }
+.quarter-width{ width: 25%; }
+
+md-grid-tile{
+    box-shadow: 10px 10px 5px #888888;
+    margin: 1em auto;
+}
+
+.full-heigth {
+    height: -moz-calc(100% - 64px); 
+    height: -webkit-calc(100% - 64px); 
+    height: calc(100% - 64px);
+}
+
+.add-book-form {
+    width: 40%;
+    margin:0 auto;
+    padding: 2em;
+    box-shadow: 0 0 1px black;
+}
+
+.edit-book-form{
+    width: 40%;
+    margin:0 auto;
+    padding: 2em;
+    box-shadow: 0 0 1px black;
+}
+.example-card {
+    max-width: 350px;
+    margin: 15px;
+}
+ 
+.superContainer {
+  padding: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-img {
+    width: 350px;
+    height: 300px;
+}

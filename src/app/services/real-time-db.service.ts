@@ -10,6 +10,7 @@ export class RealTimeDBService {
 
   books: AngularFireList<any[]> | undefined; // from firebase
   favouriteBooks: Observable<any> | undefined;
+  unreadBooks: Observable<any> | undefined;
 
   constructor(
     private angularFireDatabse: AngularFireDatabase
@@ -30,5 +31,16 @@ export class RealTimeDBService {
       }))
       
       return this.favouriteBooks;
+  }
+
+  getUnreadBooks() {
+    this.unreadBooks = this.angularFireDatabse.list('/books')
+      .valueChanges().pipe(map((books) => {
+        const unreadBooks = books.filter((item: any) => item.dateread == null);
+
+        return unreadBooks;
+      }))
+
+      return this.unreadBooks;
   }
 }
