@@ -18,10 +18,10 @@
           <button mat-button>Rate: {{ book.rate }}</button>
           <button mat-raised-button color="primary" [routerLink]="['/book-details/'+book.$key]">
             <i class="material-icons">visibility</i> Book Details
-        </button>
-        <button mat-raised-button color="accent" [routerLink]="['/edit-book/'+book.$key]">
-            <i class="material-icons">mode_edit</i> Edit Book
-        </button>
+          </button>
+          <button mat-raised-button color="accent" [routerLink]="['/edit-book/'+book.$key]">
+              <i class="material-icons">mode_edit</i> Edit Book
+          </button>
       </mat-card-actions>
     </mat-card>
 </div>
@@ -63,17 +63,17 @@
         <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
       </mat-card-header>
      
-      <a [routerLink]="['/book-details/', book.id]">
+      <a [routerLink]="['/book-details/'+book.$key]">
         <img class="book-img" mat-card-image src="{{ book.imageUrl }}">
       </a>
      
       <mat-card-actions>
           <button mat-button>Price: {{ book.price }}</button>
           <button mat-button>Rate: {{ book.rate }}</button>
-          <button mat-raised-button color="primary" [routerLink]="['/book-details/', book.id]">
+          <button mat-raised-button color="primary" [routerLink]="['/book-details/'+book.$key]">
             <i class="material-icons">visibility</i> Book Details
           </button>
-          <button mat-raised-button color="accent" [routerLink]="['/edit-book/', book.id]">
+          <button mat-raised-button color="accent" [routerLink]="['/edit-book/'+book.$key]">
               <i class="material-icons">mode_edit</i> Edit Book
           </button>
       </mat-card-actions>

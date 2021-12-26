@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material.module';
 import { RealTimeDBService } from './services/real-time-db.service';
 import { FirestoreService } from './services/firestore.service';
+import { AddBookRtdbComponent } from './components/add-book-rtdb/add-book-rtdb.component';
+import { AddBookFireComponent } from './components/add-book-fire/add-book-fire.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { FirestoreService } from './services/firestore.service';
     EditBookComponent,
     DeleteBookComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AddBookRtdbComponent,
+    AddBookFireComponent
   ],
   imports: [
     BrowserModule,

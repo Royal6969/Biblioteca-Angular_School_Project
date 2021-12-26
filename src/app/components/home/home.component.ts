@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/interfaces/book';
 import { RealTimeDBService } from 'src/app/services/real-time-db.service';
-import { FirestoreService, Book } from '../../services/firestore.service';
+import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.realTimeDatabaseService.getFavouriteBooks()
+    this.realTimeDatabaseService.getFavouriteBooks() // para obtener los libros de la RealTimeDB con un rate > 4
       .subscribe((favBooks) => {
         this.favouriteBooks = favBooks;
         console.log(this.favouriteBooks);
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
       })
 
 
-    this.getBooks();
+    this.getBooks(); // para obtener los libros de Firestore
   }
 
   getBooks(): void {

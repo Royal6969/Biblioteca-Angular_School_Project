@@ -1,21 +1,21 @@
-<!-- <p>add-book works!</p> -->
+<!-- <p>add-book-fire works!</p> -->
 
 <mat-toolbar>Add a New Book</mat-toolbar>
 
 <div class="add-book-form">
     <a [routerLink]="['/book-list']">Back</a>
 
-    <form #myForm="ngForm" (submit)="submitAdd()" [formGroup]="bookForm" (ngSubmit)="createBook()">
+    <form #myForm="ngForm" [formGroup]="bookForm" (ngSubmit)="createBook()">
         <mat-form-field class="full-width">
-            <input matInput placeholder="Book Title" name="title" id="title" required [(ngModel)]="title" formControlName="title">
+            <input matInput placeholder="Book Title" name="title" id="title" required formControlName="title">
         </mat-form-field>
 
         <mat-form-field class="full-width">
-            <input matInput placeholder="Book Author" name="author" id="author" required [(ngModel)]="author" formControlName="author">
+            <input matInput placeholder="Book Author" name="author" id="author" required formControlName="author">
         </mat-form-field>
 
         <mat-form-field class="full-width">
-            <input matInput placeholder="Book Price" type="number" name="price" id="price" required [(ngModel)]="price" formControlName="price">
+            <input matInput placeholder="Book Price" type="number" name="price" id="price" required formControlName="price">
         </mat-form-field>
 
         <table class="full-width" cellspacing="10px">
@@ -25,7 +25,7 @@
                         <input matInput [matDatepicker]="dateadded" placeholder="Date Added" type="date" name="dateadded">
                         <mat-datepicker-toggle matSuffix [for]="dateadded"></mat-datepicker-toggle>
                     </mat-form-field>
-                    <mat-datepicker #dateadded (selectedChanged)="updateDateAdded($event)"></mat-datepicker>
+                    <mat-datepicker #dateadded></mat-datepicker>
                 </td>
 
                 <td>
@@ -33,31 +33,29 @@
                         <input matInput [matDatepicker]="dateread" placeholder="Date Read" type="date" name="dateread">
                         <mat-datepicker-toggle matSuffix [for]="dateread"></mat-datepicker-toggle>
                     </mat-form-field>
-                    <mat-datepicker #dateread (selectedChanged)="updateDateRead($event)"></mat-datepicker>
+                    <mat-datepicker #dateread></mat-datepicker>
                 </td>
             </tr>
         </table>
 
         <div>
             <mat-form-field class="full-width">
-                <textarea matInput name="description" id="description" rows="5" placeholder="Book Description" [(ngModel)]="description" formControlName="description"></textarea>
+                <textarea matInput name="description" id="description" rows="5" placeholder="Book Description" formControlName="description"></textarea>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Book Rate (1-5)" min="1" max="5" step="0.1" type="number" name="rate" id="rate" [(ngModel)]="rate" formControlName="rate">
+                <input matInput placeholder="Book Rate (1-5)" min="1" max="5" step="0.1" type="number" name="rate" id="rate" formControlName="rate">
             </mat-form-field>
         </div>
 
         <mat-form-field class="third-width">
-            <input matInput placeholder="Image URL (enter image URL)" type="url" name="imageUrl" id="imageUrl" required [(ngModel)]="imageUrl" formControlName="imageUrl">
+            <input matInput placeholder="Image URL (enter image URL)" type="url" name="imageUrl" id="imageUrl" required formControlName="imageUrl">
         </mat-form-field>
-        <br>
-
-        <img src="{{imageUrl}}">
+        
         <br>
         <hr>
 
-        <button style="margin-right: 30px" mat-raised-button color="warn" value="submit" [disabled]="!myForm.form.valid">
+        <button style="margin-right: 30px" mat-raised-button color="warn" value="ngSubmit" [disabled]="!myForm.form.valid">
             Create Book
         </button>
 
