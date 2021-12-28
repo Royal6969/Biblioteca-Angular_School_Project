@@ -41,16 +41,36 @@ export class BookListComponent implements OnInit {
       .subscribe((res) => {
         this.allBooksFirestore = res.map((book: any) => {
           return {
-            ...book.payload.doc.data(),
+            data: book.payload.doc.data(),
             id: book.payload.doc.id
           } as Book;
         });
       });
+      console.log(this.allBooksFirestore);
   }
 
   getBookDetails(book: any){
     this.navigationExtras.state = book;
+    console.log(book);
     this.router.navigate(["book-details"], this.navigationExtras)
+  }
+
+  getBookDetailsRTDB(book: any){
+    this.navigationExtras.state = book;
+    console.log(book);
+    this.router.navigate(["book-details-rtdb"], this.navigationExtras)
+  }
+
+  getBookEdit(book: any){
+    this.navigationExtras.state = book;
+    console.log(book);
+    this.router.navigate(["edit-book-fire"], this.navigationExtras)
+  }
+
+  getBookEditRTDB(book: any){
+    this.navigationExtras.state = book;
+    console.log(book);
+    this.router.navigate(["edit-book-rtdb"], this.navigationExtras)
   }
 
 }

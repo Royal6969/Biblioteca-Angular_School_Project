@@ -2,7 +2,53 @@
 
 <mat-toolbar> Book Details </mat-toolbar>
 
-<div class="superContainer">
+<div class="superContainer" *ngIf="esFirestore()">
+
+    <div class="book-details" *ngIf="book">
+        <mat-card>
+            <mat-card-title>
+                <span class="mat-headline">{{book.data.title}}</span>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="left">
+                    <img class="book-imageUrl" src="{{book.data.imageUrl}}" />
+                </div>
+                <div class="right">
+                    <mat-list>
+                        <mat-list-item> <i class="material-icons">person_pin</i> Author:&nbsp;&nbsp;<b> {{book.data.author}}</b>
+                        </mat-list-item>
+                        <mat-list-item> <i class="material-icons">date_range</i> Date Added:&nbsp;&nbsp;<b>
+                                {{book.data.dateadded}}</b> </mat-list-item>
+                        <mat-list-item *ngIf="book.data.dateread"> <i class="material-icons">date_range</i> Date
+                            Read:&nbsp;&nbsp;<b> {{book.data.dateread}}</b> </mat-list-item>
+                        <mat-list-item> <i class="material-icons">attach_money</i> Price:&nbsp;&nbsp;<b> {{book.data.price}}</b>
+                        </mat-list-item>
+                        <mat-list-item *ngIf="book.data.rate"> <i class="material-icons">star</i>
+                            Rate:&nbsp;&nbsp;<b>{{book.data.rate}}</b></mat-list-item>
+                    </mat-list>
+                </div>
+                <hr>
+                <mat-toolbar>Description</mat-toolbar>
+                {{book.data.description}}
+                <p *ngIf="!book.data.description"> No description for this book! </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [routerLink]="['/book-list']" mat-raised-button> <i class="material-icons">view_module</i> All Books</button>
+
+                <button mat-raised-button class="editButton" (click)="getBookEditFire(book)"> <i class="material-icons">mode_edit</i> Edit </button>
+
+                <button mat-raised-button color="warn" (click)="getBookDeleteFire(book)"> <i class="material-icons">delete_sweep</i> Delete In Firestore</button>
+                <button mat-raised-button color="warn" (click)="getBookDeleteRTDB(book)"> <i class="material-icons">delete_sweep</i> Delete In RealTimeDB</button>
+
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="superContainer" *ngIf="!esFirestore()">
 
     <div class="book-details" *ngIf="book">
         <mat-card>
@@ -33,13 +79,12 @@
                 <p *ngIf="!book.description"> No description for this book! </p>
             </mat-card-content>
             <mat-card-actions>
-                <button [routerLink]="['/book-list']" mat-raised-button> <i class="material-icons">view_module</i> All Books
-                </button>
-                <!-- <button [routerLink]="['/edit-book/'+id]"  mat-raised-button class="editButton"> <i class="material-icons">mode_edit</i> Edit </button>  -->
-                <button mat-raised-button class="editButton"> <i class="material-icons">mode_edit</i> Edit </button>
+                <button [routerLink]="['/book-list']" mat-raised-button> <i class="material-icons">view_module</i> All Books</button>
 
-                <!-- <button [routerLink]="['/delete-book/'+id]" mat-raised-button color="warn"> <i class="material-icons">delete_sweep</i> Delete </button> -->
-                <button mat-raised-button color="warn"> <i class="material-icons">delete_sweep</i> Delete </button>
+                <button mat-raised-button class="editButton" (click)="getBookEditRTDB(book)"> <i class="material-icons">mode_edit</i> Edit </button>
+
+                <button mat-raised-button color="warn" (click)="getBookDeleteFire(book)"> <i class="material-icons">delete_sweep</i> Delete In Firestore</button>
+                <button mat-raised-button color="warn" (click)="getBookDeleteRTDB(book)"> <i class="material-icons">delete_sweep</i> Delete In RealTimeDB</button>
 
             </mat-card-actions>
         </mat-card>

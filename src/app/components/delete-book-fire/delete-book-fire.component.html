@@ -1,0 +1,20 @@
+<!-- <p>delete-book-fire works!</p> -->
+
+
+<mat-toolbar color="warn"> Delete confirmation </mat-toolbar>
+
+<div class="delete-confirm" *ngIf="book">
+
+    <mat-toolbar color="primary">You are about to delete the book: "{{book.data.title}}".</mat-toolbar>
+    
+    <mat-toolbar> 
+        <mat-toolbar-row>
+            <span>{{book.data.description}}</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+            <button [routerLink]="['book-details']" mat-button color="accent"> Go Back </button>
+            <button (click)="deleteBook(book)" mat-raised-button color="warn">  Delete Permanently </button>
+          </mat-toolbar-row>
+    </mat-toolbar>
+</div>

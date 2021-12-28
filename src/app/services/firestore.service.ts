@@ -21,4 +21,12 @@ export class FirestoreService {
     return this.angularFirestore.collection('book-list').add(book);
   }
 
+  public updateBook(id: string, book: Book) {
+    return this.angularFirestore.collection('book-list').doc(id).set(book);
+  }
+
+  public deleteBook(id: string){
+    return this.angularFirestore.collection('book-list').doc(id).delete();
+  }
+
 }

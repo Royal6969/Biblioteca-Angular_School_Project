@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditBookComponent } from './edit-book.component';
+import { EditBookRtdbComponent } from './edit-book-rtdb.component';
 
-describe('EditBookComponent', () => {
-  let component: EditBookComponent;
-  let fixture: ComponentFixture<EditBookComponent>;
+describe('EditBookRtdbComponent', () => {
+  let component: EditBookRtdbComponent;
+  let fixture: ComponentFixture<EditBookRtdbComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditBookComponent ]
+      declarations: [ EditBookRtdbComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditBookComponent);
+    fixture = TestBed.createComponent(EditBookRtdbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

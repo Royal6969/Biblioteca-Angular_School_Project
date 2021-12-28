@@ -67,4 +67,14 @@ export class RealTimeDBService {
   //   return `${year}-${month}-${day}`;
   // }
 
+  updateBook(id: any, bookDetails: any) {
+    var filteredBook = JSON.parse(JSON.stringify(bookDetails)); // removes the undefined fields
+
+    return this.books?.update(id, filteredBook);
+  }
+
+  deleteBook(id: any) {
+    return this.books?.remove(id);
+  }
+  
 }
