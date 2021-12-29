@@ -28,6 +28,9 @@ import { AddBookFireComponent } from './components/add-book-fire/add-book-fire.c
 import { EditBookFireComponent } from './components/edit-book-fire/edit-book-fire.component';
 import { EditBookRtdbComponent } from './components/edit-book-rtdb/edit-book-rtdb.component';
 import { DeleteBookFireComponent } from './components/delete-book-fire/delete-book-fire.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -44,7 +47,8 @@ import { DeleteBookFireComponent } from './components/delete-book-fire/delete-bo
     DeleteBookComponent,
     NavbarComponent,
     FooterComponent,
-    DeleteBookFireComponent
+    DeleteBookFireComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,8 @@ import { DeleteBookFireComponent } from './components/delete-book-fire/delete-bo
     AngularMaterialModule,
     AngularFireModule.initializeApp(environment.firebase, 'library'), // optionally provide a custom firebase application name
     AngularFirestoreModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgbModule
   ],
   providers: [
     RealTimeDBService,

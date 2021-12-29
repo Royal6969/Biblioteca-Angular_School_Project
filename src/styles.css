@@ -93,3 +93,7 @@ div.footer>a{
     margin-top: -50px;
     margin-left: -50px;
 }
+
+/************************** clientes ******************************/
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../src/assets/font-awesome/css/font-awesome.min.css";

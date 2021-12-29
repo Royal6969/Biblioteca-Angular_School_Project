@@ -1,0 +1,67 @@
+<!-- <p>clientes works!</p> -->
+
+<div class="container">
+
+    <div class="text-right mt-4">
+      <button class="btn btn-primary" (click)="openModal(popup, null)">
+        <i class="fa fa-plus"></i> Add
+      </button>
+    </div>
+  
+    <div class="row" *ngIf="customerList.length">
+      <div class="col-md-4" *ngFor="let customer of customerList">
+  
+        <div class="tilt box" data-tilt data-tilt-glare="true" data-tilt-scale="1.1">
+          <h2 class="name">{{ customer.name }}</h2>
+          <!-- <a href="" class="buy">Buy Now</a> -->
+          <h2 class="buy">{{ customer.email }}</h2>
+          <div class="circle">
+            <img style="width: 200px; height: 200px;" [src]="customer.url" class="product">
+          </div>
+  
+          <div class="icon">
+            <i class="fa fa-edit text-primary" (click)="openModal(popup, customer.id)"></i>
+            <i class="fa fa-trash text-danger" (click)="deleteCustomer(customer.id)"></i>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
+  
+  <ng-template #popup let-d="dismiss">
+    <div class="modal-header text-primary">
+      {{customerDetails ? 'Update' : 'Add'}} customer
+    </div>
+  
+    <div class="modal-body">
+      <form [formGroup]="form">
+  
+        <div class="form-group">
+          <label for="name">Name</label>
+          <!-- <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{'error-border': !form.get('name').valid && form.get('name').dirty}"/> -->
+          <input id="name" type="text" formControlName="name" class="form-control" />
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <!-- <input id="email" type="text" formControlName="email" class="form-control" [ngClass]="{'error-border': !form.get('email').valid && form.get('email').dirty}"/> -->
+          <input id="email" type="text" formControlName="email" class="form-control"/>
+        </div>
+  
+        <div class="form-group">
+          <label for="url">Imagen</label>
+          <!-- <input id="url" type="url" formControlName="url" class="form-control" [ngClass]="{'error-border': !form.get('url').valid && form.get('url').dirty}"> -->
+          <input id="url" type="url" formControlName="url" class="form-control"/>
+        </div>
+  
+      </form>
+  
+      <div class="text-center">
+        <button class="btn btn-primary btn-sm pl-4 pr-4 mr-2" (click)="customerDetails ? updateCustomer(customerDetails.id) : addCustomer(); d()">Save</button>
+        <button class="btn btn-secondary btn-sm pl-4 pr-4 ml-2" (click)="d()">Cancel</button>
+      </div>
+    </div>
+  </ng-template>
+  

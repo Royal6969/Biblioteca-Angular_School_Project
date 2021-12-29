@@ -5,6 +5,7 @@ import { AddBookRtdbComponent } from './components/add-book-rtdb/add-book-rtdb.c
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookListComponent } from './components/book-list/book-list.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
 import { DeleteBookFireComponent } from './components/delete-book-fire/delete-book-fire.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { EditBookFireComponent } from './components/edit-book-fire/edit-book-fire.component';
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path: 'delete-book-fire',
     component: DeleteBookFireComponent
+  },
+  {
+    path: 'clientes',
+    component: ClientesComponent
   }
 ];
 
