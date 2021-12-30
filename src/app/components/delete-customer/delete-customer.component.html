@@ -1,0 +1,34 @@
+<!-- <p>delete-customer works!</p> -->
+
+<mat-toolbar color="warn"> Delete confirmation </mat-toolbar>
+
+<div class="delete-confirm" *ngIf="customer">
+
+    <mat-toolbar color="primary">You are about to delete the customer: "{{customer.data.name}}".</mat-toolbar>
+    
+    <mat-toolbar> 
+        <mat-toolbar-row>
+            <span>Name: {{customer.data.name}}</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span>Age: {{customer.data.age}}</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span>Email: {{customer.data.email}}</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span>Postal Code: {{customer.data.postalCode}}</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span>Address: {{customer.data.address}}</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span>Notes: {{customer.data.notes}}</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+            <button [routerLink]="['/clientes-v2']" mat-button color="accent"> Go Back </button>
+            <button (click)="deleteCustomer(customer)" mat-raised-button color="warn">  Delete Permanently </button>
+          </mat-toolbar-row>
+    </mat-toolbar>
+</div>

@@ -28,9 +28,13 @@ import { AddBookFireComponent } from './components/add-book-fire/add-book-fire.c
 import { EditBookFireComponent } from './components/edit-book-fire/edit-book-fire.component';
 import { EditBookRtdbComponent } from './components/edit-book-rtdb/edit-book-rtdb.component';
 import { DeleteBookFireComponent } from './components/delete-book-fire/delete-book-fire.component';
-import { ClientesComponent } from './components/clientes/clientes.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ClientesV2Component } from './components/clientes-v2/clientes-v2.component';
+import { AddCustomerComponent } from './components/add-customer/add-customer.component';
+import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
+import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { DeleteCustomerComponent } from './components/delete-customer/delete-customer.component';
 
 
 @NgModule({
@@ -48,7 +52,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavbarComponent,
     FooterComponent,
     DeleteBookFireComponent,
-    ClientesComponent
+    ClientesV2Component,
+    AddCustomerComponent,
+    EditCustomerComponent,
+    CustomerDetailsComponent,
+    DeleteCustomerComponent
   ],
   imports: [
     BrowserModule,

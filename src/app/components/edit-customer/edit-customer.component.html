@@ -1,0 +1,44 @@
+<!-- <p>edit-customer works!</p> -->
+
+<mat-toolbar>Edit Customer</mat-toolbar>
+
+<div class="edit-customer-form">
+    <a [routerLink]="['/clientes-v2']">Back</a>
+
+    <form #values="ngForm" [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Customer Name" name="name" id="name" formControlName="name" [class]="isValid('name')" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Customer Age" name="age" id="age" formControlName="age" [class]="isValid('age')" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Customer email" type="email" name="email" id="email" formControlName="email" [class]="isValid('email')" required>
+      </mat-form-field>
+    
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Postal Code" name="postalCode" id="postalCode" formControlName="postalCode" [class]="isValid('postalCode')" required>
+      </mat-form-field>    
+     
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Customer Address" name="address" id="address" formControlName="address" [class]="isValid('address')" required>
+      </mat-form-field>
+
+      <mat-form-field class="third-width">
+        <input matInput placeholder="Image URL (enter image URL)" type="url" name="url" id="url" formControlName="url" [class]="isValid('url')" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Customer Notes" name="notes" id="notes" rows="5" formControlName="notes"></textarea>
+      </mat-form-field>
+      
+      <hr>
+
+      <button style="margin-right: 30px" mat-raised-button color="warn" (click)="updateCustomer()" value="updateCustomer">
+        Update Customer
+      </button>
+    
+    </form>
+</div>

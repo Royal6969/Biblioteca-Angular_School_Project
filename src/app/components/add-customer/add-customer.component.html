@@ -1,0 +1,49 @@
+<!-- <p>add-customer works!</p> -->
+
+<mat-toolbar>Add a New Customer</mat-toolbar>
+
+<div class="add-book-form">
+    <a [routerLink]="['/clientes-v2']">Back</a>
+
+    <form #myForm="ngForm" [formGroup]="customerForm" (ngSubmit)="createCustomer()">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Customer Name" name="name" id="name" required formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Customer Age" name="age" id="age" required formControlName="age">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Customer Email" type="email" name="email" id="email" required formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Customer Postal Code" name="postalCode" id="postalCode" required formControlName="postalCode">
+        </mat-form-field>
+        
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Customer Address" name="address" id="address" required formControlName="address">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Customer Job" name="job" id="job" required formControlName="job">
+        </mat-form-field>
+
+        <mat-form-field class="third-width">
+            <input matInput placeholder="Image URL (enter image URL)" type="url" name="url" id="url" required formControlName="url">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Customer Notes" name="notes" id="notes" formControlName="notes">
+        </mat-form-field>
+        
+        <br>
+        <hr>
+
+        <button style="margin-right: 30px" mat-raised-button color="warn" value="ngSubmit" [disabled]="!myForm.form.valid">
+            Create Customer
+        </button>
+
+    </form>
+</div>

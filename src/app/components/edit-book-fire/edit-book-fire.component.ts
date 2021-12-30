@@ -11,7 +11,7 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 export class EditBookFireComponent implements OnInit {
 
   book: any;
-  navigationExtras: NavigationExtras = { // andrés, por qué no tienes esto en tu ActualizarComponent?
+  navigationExtras: NavigationExtras = {
     state: {
       value: null
     }}

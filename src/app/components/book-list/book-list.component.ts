@@ -46,7 +46,7 @@ export class BookListComponent implements OnInit {
           } as Book;
         });
       });
-      console.log(this.allBooksFirestore);
+      //console.log(this.allBooksFirestore);
   }
 
   getBookDetails(book: any){

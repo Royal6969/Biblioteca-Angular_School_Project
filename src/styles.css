@@ -41,12 +41,18 @@ md-grid-tile{
     padding: 2em;
     box-shadow: 0 0 1px black;
 }
+.edit-customer-form{
+    width: 40%;
+    margin:0 auto;
+    padding: 2em;
+    box-shadow: 0 0 1px black;
+}
 
 
 .left{float: left}
 .right{float: left; padding: 25px;}
 
-.delete-confirm{margin:0 auto; width: 40%;}
+.delete-confirm{margin:0 auto; width: 70%;}
 .details-book{ margin:0 auto; width: 60%;height: 100vh }
 .bookTile{padding:25px auto;}
 .editButton{

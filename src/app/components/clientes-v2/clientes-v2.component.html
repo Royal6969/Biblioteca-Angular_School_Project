@@ -1,0 +1,37 @@
+<!-- <p>clientes-v2 works!</p> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="body">
+    <div class="container" *ngIf="allCustomersFirestore != null || allCustomersFirestore != undefined">
+
+        <div class="cards" *ngFor="let customer of allCustomersFirestore">
+            <div class="imgBx">
+                <a [routerLink]="['customer-details']">
+                    <img src="{{ customer.data.url }}">
+                </a>
+            </div>
+
+            <div class="content">
+                <div class="details">
+                    <h2>
+                        {{ customer.data.job }}
+                        <br>
+                        <span>{{ customer.data.email }}</span>
+                        <br>
+                        {{ customer.data.name }}, 
+                        {{ customer.data.age }}
+                    </h2>
+
+                    <ul class="social_icons">
+                        <li><a [routerLink]="['/add-customer']"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                        <li (click)="getCustomerDetails(customer)"><a><i class="fa fa-info" aria-hidden="true"></i></a></li>
+                        <li (click)="getCustomerEdit(customer)"><a><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                        <li (click)="getCustomerDelete(customer)"><a><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

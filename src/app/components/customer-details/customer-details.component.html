@@ -1,0 +1,59 @@
+<!-- <p>customer-details works!</p> -->
+
+<mat-toolbar> Customer Details </mat-toolbar>
+
+<div class="superContainer" *ngIf="isRouteOk()">
+
+    <div class="customer-details" *ngIf="customer">
+        <mat-card>
+            <mat-card-title>
+                <span class="mat-headline">{{customer.data.name}}</span>
+            </mat-card-title>
+
+            <mat-card-content>
+                <div class="left">
+                    <img class="customer-url" src="{{customer.data.url}}" />
+                </div>
+
+                <div class="right">
+                    <mat-list>
+                        <mat-list-item> 
+                            <i class="material-icons">person_pin</i>&nbsp;&nbsp;Name:&nbsp;&nbsp;<b> {{customer.data.name}}</b>
+                        </mat-list-item>
+                        <mat-list-item> 
+                            <i class="material-icons">cake</i>&nbsp;&nbsp;Age:&nbsp;&nbsp;<b> {{customer.data.age}}</b>
+                        </mat-list-item>
+                        <mat-list-item> 
+                            <i class="material-icons">email</i>&nbsp;&nbsp;Email:&nbsp;&nbsp;<b> {{customer.data.email}}</b>
+                        </mat-list-item>
+                        <mat-list-item> 
+                            <i class="material-icons">home</i>&nbsp;&nbsp;Address:&nbsp;&nbsp;<b> {{customer.data.address}}</b>
+                        </mat-list-item>
+                        <mat-list-item> 
+                            <i class="material-icons">location_on</i>&nbsp;&nbsp;Postal Code:&nbsp;&nbsp;<b> {{customer.data.postalCode}}</b>
+                        </mat-list-item>
+                        <mat-list-item> 
+                            <i class="material-icons">work</i>&nbsp;&nbsp;Job:&nbsp;&nbsp;<b> {{customer.data.job}}</b>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+                <hr>
+
+                <mat-toolbar>Notes</mat-toolbar>
+                {{customer.data.notes}}
+                <p *ngIf="!customer.data.notes"> No notes yet for this customer </p>
+            </mat-card-content>
+            
+            <mat-card-actions>
+                <button [routerLink]="['/clientes-v2']" mat-raised-button> <i class="material-icons">view_module</i> All Customers</button>
+
+                <button mat-raised-button class="editButton" (click)="getCustomerEdit(customer)"> <i class="material-icons">mode_edit</i> Edit </button>
+
+                <button mat-raised-button color="warn" (click)="getCustomerDelete(customer)"> <i class="material-icons">delete_sweep</i> Delete</button>
+
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</div>
