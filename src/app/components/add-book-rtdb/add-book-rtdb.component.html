@@ -1,6 +1,6 @@
 <!-- <p>add-book-rtdb works!</p> -->
 
-<mat-toolbar>Add a New Book</mat-toolbar>
+<mat-toolbar>Add a New Book | RealTimeDB</mat-toolbar>
 
 <div class="add-book-form">
     <a [routerLink]="['/book-list']">Back</a>
@@ -57,9 +57,13 @@
         <br>
         <hr>
 
-        <button style="margin-right: 30px" mat-raised-button color="warn" value="submit" [disabled]="!myForm.form.valid">
+        <!-- <button style="margin-right: 30px" mat-raised-button color="warn" value="submit" [disabled]="!myForm.form.valid">
             Create Book
-        </button>
+        </button> -->
+
+        <button class="a" value="submit" [disabled]="!myForm.form.valid">Create Book</button>
+
+        <br><br>
 
     </form>
 </div>

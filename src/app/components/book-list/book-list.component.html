@@ -9,20 +9,29 @@
         <mat-card-subtitle>{{ book.data.author }}</mat-card-subtitle>
       </mat-card-header>
      
-      <a [routerLink]="['/book-details/', book.data.id]">
+      <a (click)="getBookDetails(book)">
         <img class="book-img" mat-card-image src="{{ book.data.imageUrl }}">
       </a>
      
-      <mat-card-actions>
+      <mat-card-actions class="mat-card-actions">
           <button mat-button>Price: {{ book.data.price }}</button>
           <button mat-button>Rate: {{ book.data.rate }}</button>
-          <!-- <button mat-raised-button color="primary" [routerLink]="['/book-details/', book.data.id]"> -->
-          <button mat-raised-button color="primary" (click)="getBookDetails(book)">
+          
+          <!-- <button mat-raised-button color="primary" (click)="getBookDetails(book)">
             <i class="material-icons">visibility</i> Book Details
-          </button>
-          <button mat-raised-button color="accent" (click)="getBookEdit(book)">
+          </button> -->
+          <!-- <button mat-raised-button color="accent" (click)="getBookEdit(book)">
               <i class="material-icons">mode_edit</i> Edit Book
-          </button>
+          </button> -->
+          
+          <a class="a" (click)="getBookDetails(book)">
+            <span class="span">Book Details</span>
+            <span class="span">Click Here</span>
+          </a>
+          <a class="b" (click)="getBookEdit(book)">
+            <span class="span">Edit Book</span>
+            <span class="span">Click Here</span>
+          </a>
       </mat-card-actions>
     </mat-card>
 </div>
@@ -39,19 +48,29 @@
         <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
       </mat-card-header>
      
-      <a [routerLink]="['/book-details/'+book.$key]">
+      <a (click)="getBookDetailsRTDB(book)">
         <img class="book-img" mat-card-image src="{{ book.imageUrl }}">
       </a>
 
       <mat-card-actions>
           <button mat-button>Price: {{ book.price }}</button>
           <button mat-button>Rate: {{ book.rate }}</button>
-          <button mat-raised-button color="primary" (click)="getBookDetailsRTDB(book)">
+          
+          <!-- <button mat-raised-button color="primary" (click)="getBookDetailsRTDB(book)">
             <i class="material-icons">visibility</i> Book Details
-          </button>
-          <button mat-raised-button color="accent" (click)="getBookEditRTDB(book)">
+          </button> -->
+          <!-- <button mat-raised-button color="accent" (click)="getBookEditRTDB(book)">
               <i class="material-icons">mode_edit</i> Edit Book
-          </button>
-      </mat-card-actions>
+          </button> -->
+      
+          <a class="a" (click)="getBookDetailsRTDB(book)">
+            <span class="span">Book Details</span>
+            <span class="span">Click Here</span>
+          </a>
+          <a class="b" (click)="getBookEditRTDB(book)">
+            <span class="span">Edit Book</span>
+            <span class="span">Click Here</span>
+          </a>
+        </mat-card-actions>
     </mat-card>
 </div>

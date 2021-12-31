@@ -35,7 +35,7 @@ export class EditCustomerComponent implements OnInit {
       address: new FormControl(this.customer.data.address, Validators.required),
       job: new FormControl(this.customer.data.job, Validators.required),
       url: new FormControl(this.customer.data.url, Validators.required),
-      notes: new FormControl(this.customer.data.notes, Validators.required)
+      notes: new FormControl(this.customer.data.notes)
     })
   }
 

@@ -1,6 +1,6 @@
 <!-- <p>customer-details works!</p> -->
 
-<mat-toolbar> Customer Details </mat-toolbar>
+<mat-toolbar> Customer Details | Firestore</mat-toolbar>
 
 <div class="superContainer" *ngIf="isRouteOk()">
 
@@ -46,12 +46,13 @@
             </mat-card-content>
             
             <mat-card-actions>
-                <button [routerLink]="['/clientes-v2']" mat-raised-button> <i class="material-icons">view_module</i> All Customers</button>
+                <!-- <button [routerLink]="['/clientes-v2']" mat-raised-button> <i class="material-icons">view_module</i> All Customers</button> -->
+                <!-- <button mat-raised-button class="editButton" (click)="getCustomerEdit(customer)"> <i class="material-icons">mode_edit</i> Edit </button> -->
+                <!-- <button mat-raised-button color="warn" (click)="getCustomerDelete(customer)"> <i class="material-icons">delete_sweep</i> Delete</button> -->
 
-                <button mat-raised-button class="editButton" (click)="getCustomerEdit(customer)"> <i class="material-icons">mode_edit</i> Edit </button>
-
-                <button mat-raised-button color="warn" (click)="getCustomerDelete(customer)"> <i class="material-icons">delete_sweep</i> Delete</button>
-
+                <button class="button-details" [routerLink]="['/clientes-v2']"><a routerLinkActive="router-link-active"  style="--clr:#4da9ff;--i:0;"><span>Customers</span></a></button>
+                <button class="button-details" (click)="getCustomerEdit(customer)"><a routerLinkActive="router-link-active"  style="--clr:#d6cd52;--i:0;"><span>Edit</span></a></button>
+                <button class="button-details" (click)="getCustomerDelete(customer)"><a routerLinkActive="router-link-active"  style="--clr:#f86464;--i:0;"><span>Delete</span></a></button>
             </mat-card-actions>
         </mat-card>
     </div>

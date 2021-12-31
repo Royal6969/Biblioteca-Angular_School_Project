@@ -1,20 +1,86 @@
 <!-- <p>navbar works!</p> -->
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="navigation">
+        <!-- <div>
+            <button mat-raised-button color="primary" [routerLink]="['/']">Primary</button>
+        </div>  -->
 
-        <div>
-            <a class="navbar-brand" [routerLink]="['/']">Library</a>
-        </div>
+        <!-- <div class="spacer"></div> -->
 
-        <ul class="nav navbar-nav">
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Home</a></li>
-            <li><a [routerLink]="['/book-list']" routerLinkActive="router-link-active">Book List</a></li>
-            <li><a [routerLink]="['/add-book']" routerLinkActive="router-link-active">Add Book</a></li>
-            <li><a [routerLink]="['/add-book-fire']" routerLinkActive="router-link-active">Add Book Fire</a></li>
-            <li><a [routerLink]="['/add-book-rtdb']" routerLinkActive="router-link-active">Add Book RTDB</a></li>
-            <li><a [routerLink]="['/clientes-v2']" routerLinkActive="router-link-active">Clientes_v2</a></li>
+        <img [routerLink]="['/']" src="../../../assets/library.jpg" class="logo">
+
+        <ul>
+            <li class="list">
+                <a [routerLink]="['/']">
+                    <span class="icon material-icons">
+                        home
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a [routerLink]="['/book-list']">
+                    <span class="icon material-icons">
+                        menu_book
+                    </span>
+                    <span class="text">Books</span>
+                </a>
+            </li>
+
+            <!-- <li class="list">
+                <a [routerLink]="['/add-book']">
+                    <span class="icon material-icons">
+                        menu_book
+                    </span>
+                    <span class="text">Add Book</span>
+                </a>
+            </li> -->
+
+            <li class="list">
+                <a [routerLink]="['/add-book-fire']">
+                    <span class="icon material-icons">
+                        bookmark_add
+                    </span>
+                    <span class="text">Add Book Fire</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a [routerLink]="['/add-book-rtdb']">
+                    <span class="icon material-icons">
+                        bookmark_add
+                    </span>
+                    <span class="text">Add Book RTDB</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a [routerLink]="['/clientes-v2']">
+                    <span class="icon material-icons">
+                        people
+                    </span>
+                    <span class="text">Customers</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a [routerLink]="['/add-customer']">
+                    <span class="icon material-icons">
+                        person_add
+                    </span>
+                    <span class="text">Add Customer</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a [routerLink]="['/']">
+                    <span class="icon material-icons">
+                        person_outline
+                    </span>
+                    <span class="text">Login</span>
+                </a>
+            </li>
+
         </ul>
-
     </div>
-</nav>

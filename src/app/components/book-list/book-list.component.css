@@ -50,3 +50,203 @@ md-grid-tile{
     width: 350px;
     height: 300px;
 }
+
+/******************** botones chulos ********************/
+
+.mat-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.a{
+    position: relative;
+    width: 160px;
+    height: 50px;
+    background: #222;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.box-1 .a, 
+.box-2 .a, 
+.box-3 .a{
+    position: relative;
+    width: 160px;
+    height: 50px;
+    /* margin: 15px 10px; */
+    margin-left: 30%;
+    background: #222;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.a::before{ /* esto es la línea inicial de la izquierda sin tocar aún el botón */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #00fe73;
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.a::after{ /* esto es la línea inicial de la izquierda sin tocar aún el botón */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: #00fe73;
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.a:nth-child(2)::before,
+.a:nth-child(2)::after{
+    background: #fe1a6f;
+}
+
+.a:hover::before,
+.a:hover::after{
+    width: 50%;
+    transition-delay: 0s;
+}
+
+.a .span{
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.a .span:nth-child(1){
+    transition-delay: 0.75s;
+}
+
+.a:hover .span:nth-child(1){
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.a .span:nth-child(2){
+    transform: scale(3);
+    opacity: 0;
+    color: #111;
+    transition-delay: 0s;
+}
+
+.a:hover .span:nth-child(2){
+    transform: scale(1);
+    transition-delay: 0s;
+    opacity: 1;
+    z-index: 10;
+    transition-delay: 0.5s;
+}
+/**************************/
+.b{
+    position: relative;
+    width: 160px;
+    height: 50px;
+    background: #222;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.box-1 .b, 
+.box-2 .b, 
+.box-3 .b{
+    position: relative;
+    width: 160px;
+    height: 50px;
+    /* margin: 15px 10px; */
+    margin-left: 30%;
+    background: #222;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.b::before{ /* esto es la línea inicial de la izquierda sin tocar aún el botón */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #fe1a6f;
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.b::after{ /* esto es la línea inicial de la izquierda sin tocar aún el botón */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: #fe1a6f;
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.5s;
+}
+
+.b:nth-child(2)::before,
+.b:nth-child(2)::after{
+    background: #fe1a6f;
+}
+
+.b:hover::before,
+.b:hover::after{
+    width: 50%;
+    transition-delay: 0s;
+}
+
+.b .span{
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.b .span:nth-child(1){
+    transition-delay: 0.75s;
+}
+
+.b:hover .span:nth-child(1){
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.b .span:nth-child(2){
+    transform: scale(3);
+    opacity: 0;
+    color: #111;
+    transition-delay: 0s;
+}
+
+.b:hover .span:nth-child(2){
+    transform: scale(1);
+    transition-delay: 0s;
+    opacity: 1;
+    z-index: 10;
+    transition-delay: 0.5s;
+}

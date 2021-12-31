@@ -35,10 +35,10 @@ const routes: Routes = [
     path: 'book-details-rtdb',
     component: BookDetailsComponent
   },
-  {
-    path: 'add-book',
-    component: AddBookComponent
-  },
+  // {
+  //   path: 'add-book',
+  //   component: AddBookComponent
+  // },
   {
     path: 'add-book-fire',
     component: AddBookFireComponent

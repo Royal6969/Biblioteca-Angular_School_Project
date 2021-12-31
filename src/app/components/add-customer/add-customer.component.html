@@ -1,6 +1,6 @@
 <!-- <p>add-customer works!</p> -->
 
-<mat-toolbar>Add a New Customer</mat-toolbar>
+<mat-toolbar>Add a New Customer | Firestore</mat-toolbar>
 
 <div class="add-book-form">
     <a [routerLink]="['/clientes-v2']">Back</a>
@@ -41,9 +41,13 @@
         <br>
         <hr>
 
-        <button style="margin-right: 30px" mat-raised-button color="warn" value="ngSubmit" [disabled]="!myForm.form.valid">
+        <!-- <button style="margin-right: 30px" mat-raised-button color="warn" value="ngSubmit" [disabled]="!myForm.form.valid">
             Create Customer
-        </button>
+        </button> -->
+
+        <button class="a" value="ngSubmit" [disabled]="!myForm.form.valid">Create Customer</button>
+
+        <br><br>
 
     </form>
 </div>
