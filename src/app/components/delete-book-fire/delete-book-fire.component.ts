@@ -26,6 +26,8 @@ export class DeleteBookFireComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.book);
+
     if (this.book == null){
       //asi controlo que nadie se intente colar
       this.router.navigate(["book-list"]);

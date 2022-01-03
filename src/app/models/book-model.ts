@@ -1,5 +1,4 @@
-export interface Book {
-    $key?: string;
+export default class BookModel {
     key?: string | null;
     author?: string;
     title?: string;

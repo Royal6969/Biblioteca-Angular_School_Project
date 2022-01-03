@@ -40,8 +40,9 @@
 
 <mat-toolbar>All Books || RealTimeDB</mat-toolbar>
 
-<div class="superContainer" *ngIf="allBooksRealTimeDB != null || allBooksRealTimeDB != undefined">
-    <mat-card class="example-card" *ngFor="let book of allBooksRealTimeDB">
+<div class="superContainer">
+    <!-- <mat-card class="example-card" *ngFor="let book of allBooksRealTimeDB"> -->
+      <mat-card class="example-card" *ngFor="let book of allBooksRealTimeDB_v2">
       <mat-card-header>
         <img mat-card-avatar src="{{ book.imageUrl }}">
         <mat-card-title>{{ book.title }}</mat-card-title>

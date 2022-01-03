@@ -2,10 +2,10 @@
 
 <mat-toolbar>Edit Book</mat-toolbar>
 
-<div class="edit-book-form">
+<div class="edit-book-form" *ngIf="book">
     <a [routerLink]="['/book-list']">Back</a>
 
-    <form #values="ngForm" [formGroup]="bookForm">
+    <!-- <form #values="ngForm" [formGroup]="bookForm">
       <mat-form-field class="full-width">
         <input matInput placeholder="Book Title" name="title" id="title" formControlName="title" [class]="isValid('title')" required>
       </mat-form-field>
@@ -47,12 +47,54 @@
       <img src="{{book.imageUrl}}">
       
       <hr>
-      <!-- <button style="margin-right: 30px" mat-raised-button color="warn"  (click)="updateBook()" value="updateBook">
-        Update Book
-      </button> -->
 
       <button class="a" (click)="updateBook()" value="updateBook">Update Book</button>
 
+      <br><br>
+    
+    </form> -->
+
+    <form #values="ngForm" [formGroup]="bookForm">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Book Title" name="title" id="title" formControlName="title" [class]="isValid('title')" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Book Author" name="author" id="author" formControlName="author" [class]="isValid('author')" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Book Price" type="number" name="price" id="price" formControlName="price" [class]="isValid('price')" required>
+      </mat-form-field>
+      
+      <mat-form-field class="full-width">
+        <textarea matInput name="description" id="description" rows="5" placeholder="Book Description" formControlName="description" [class]="isValid('description')"></textarea>
+      </mat-form-field>
+    
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Book Rate (1-5)" min="1" max="5" step="0.1" type="number" name="rate" id="rate" formControlName="rate" [class]="isValid('rate')">
+      </mat-form-field>    
+     
+
+      <mat-form-field class="third-width">
+        <input matInput placeholder="Image URL (enter image URL)" type="url" name="imageUrl" id="imageUrl" formControlName="imageUrl" [class]="isValid('imageUrl')" required>
+      </mat-form-field>
+
+      <img src="{{book.imageUrl}}">
+      
+      <hr>
+
+      <!-- <button class="a" (click)="updateBook_v2()" value="updateBook">Update Book</button> -->
+
+      <button type="submit" class="a" (click)="updateBook_v2()">
+        Update
+      </button>
+      <p>{{ message }}</p>
+
+      <div *ngIf="!book">
+        <br />
+        <p>Cannot access this Book...</p>
+      </div>
       <br><br>
     
     </form>

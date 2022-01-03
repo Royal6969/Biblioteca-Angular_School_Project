@@ -2,10 +2,12 @@
 
 <mat-toolbar>Add a New Book | RealTimeDB</mat-toolbar>
 
-<div class="add-book-form">
+<div class="add-book-form" *ngIf="!submitted">
     <a [routerLink]="['/book-list']">Back</a>
 
-    <form #myForm="ngForm" (submit)="submitAdd()">
+    <!-- ------------------------------------------------- form_v1 ------------------------------------------ -->
+
+    <!-- <form #myForm="ngForm" (submit)="submitAdd()">
         <mat-form-field class="full-width">
             <input matInput placeholder="Book Title" name="title" id="title" required [(ngModel)]="title">
         </mat-form-field>
@@ -57,11 +59,54 @@
         <br>
         <hr>
 
-        <!-- <button style="margin-right: 30px" mat-raised-button color="warn" value="submit" [disabled]="!myForm.form.valid">
-            Create Book
-        </button> -->
-
         <button class="a" value="submit" [disabled]="!myForm.form.valid">Create Book</button>
+
+        <br><br>
+
+    </form> -->
+
+    <!-- ------------------------------------------------- form_v2 ------------------------------------------ -->
+
+    <form #myForm="ngForm">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Book Title" name="title" id="title"  required [(ngModel)]="book.title">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Book Author" name="author" id="author"  required [(ngModel)]="book.author">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Book Price" type="number" name="price" id="price"  required [(ngModel)]="book.price">
+        </mat-form-field>
+
+        <div>
+            <mat-form-field class="full-width">
+                <textarea matInput name="description" id="description" rows="5" placeholder="Book Description"  [(ngModel)]="book.description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Book Rate (1-5)" min="1" max="5" step="0.1" type="number" name="rate" id="rate"  [(ngModel)]="book.rate">
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="third-width">
+            <input matInput placeholder="Image URL (enter image URL)" type="url" name="imageUrl" id="imageUrl"  required [(ngModel)]="book.imageUrl">
+        </mat-form-field>
+        <br>
+
+        <img src="{{book.imageUrl}}">
+        <br>
+        <hr>
+
+        <button class="a" (click)="saveBook()" [disabled]="!myForm.form.valid">Save Book</button>
+        
+        <br><br>
+
+        <div *ngIf="submitted">
+            <h4>You submitted successfully!</h4>
+            <button class="a" (click)="newBook()" [disabled]="!myForm.form.valid">Add Book</button>        
+        </div>
 
         <br><br>
 

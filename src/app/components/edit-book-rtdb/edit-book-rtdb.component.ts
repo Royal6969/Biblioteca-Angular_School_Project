@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import BookModel from 'src/app/models/book-model';
 import { RealTimeDBService } from 'src/app/services/real-time-db.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { RealTimeDBService } from 'src/app/services/real-time-db.service';
   templateUrl: './edit-book-rtdb.component.html',
   styleUrls: ['./edit-book-rtdb.component.css']
 })
-export class EditBookRtdbComponent implements OnInit {
+export class EditBookRtdbComponent implements OnInit, OnChanges {
 
   book: any;
   navigationExtras: NavigationExtras = { // andrés, por qué no tienes esto en tu ActualizarComponent?
@@ -16,6 +17,8 @@ export class EditBookRtdbComponent implements OnInit {
       value: null
     }}
   bookForm: any;
+
+  message = '';
 
   constructor(
     private realTimeDBService: RealTimeDBService,
@@ -46,6 +49,13 @@ export class EditBookRtdbComponent implements OnInit {
       //asi controlo que nadie se intente colar
       this.router.navigate(["book-list"]);
     }
+
+    this.message = '';
+  }
+
+  ngOnChanges(): void {
+    this.message = '';
+    this.bookForm = { ...this.book };
   }
 
   updateDateAdded(dateAdded: any) {
@@ -69,6 +79,23 @@ export class EditBookRtdbComponent implements OnInit {
     } else {
       alert("no se rellenaron todos los campos del formulario revisalo bien")
     }
+  }
+
+  updateBook_v2(): void {
+
+    if (this.bookForm.valid) {
+      if (this.book.key) {
+        this.realTimeDBService.updateBook_v2(this.book.key, this.bookForm.value)
+          .then(() => this.message = 'The tutorial was updated successfully!')
+          .catch(err => console.log(err));
+      }
+      
+      this.router.navigate(["book-list"]);
+    
+    } else {
+      alert("no se rellenaron todos los campos del formulario revisalo bien")
+    }
+    
   }
 
   isValid(field: string){

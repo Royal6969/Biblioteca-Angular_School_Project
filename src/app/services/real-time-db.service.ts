@@ -3,25 +3,35 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject, AngularFireAct
 import { Observable } from 'rxjs/';
 import { map } from 'rxjs/operators';
 import { Book } from '../interfaces/book';
+import BookModel from '../models/book-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RealTimeDBService {
 
+  private dbPath = '/books';
+
   books: AngularFireList<any[]> | undefined; // from firebase
+  booksRef: AngularFireList<BookModel>;
   favouriteBooks: Observable<any> | undefined;
   unreadBooks: Observable<any> | undefined;
   bookDetails: AngularFireObject<any> | undefined; // from firebase
 
   constructor(
     private angularFireDatabse: AngularFireDatabase
-  ) { }
+  ) { 
+    this.booksRef = angularFireDatabse.list(this.dbPath);
+  }
 
   getBooks() {
     this.books = this.angularFireDatabse.list('/books') as AngularFireList<Book[]>;
 
     return this.books;
+  }
+
+  getBooks_v2(): AngularFireList<BookModel> {
+    return this.booksRef;
   }
 
   getFavouriteBooks() {
@@ -59,6 +69,10 @@ export class RealTimeDBService {
     return this.books?.push(filteredBook);
   }
 
+  addBook_v2(book: Book): any {
+    return this.booksRef.push(book);
+  }
+
   // formatDate(date: Date): string { // ver el archivo /app/utils/my-date-formats.ts
   //   const day = date.getDate();
   //   const month = date.getMonth() + 1;
@@ -73,8 +87,16 @@ export class RealTimeDBService {
     return this.books?.update(id, filteredBook);
   }
 
+  updateBook_v2(key: string, value: any): Promise<void> {
+    return this.booksRef.update(key, value);
+  }
+
   deleteBook(id: any) {
     return this.books?.remove(id);
+  }
+
+  deleteBook_v2(key: string): Promise<void> {
+    return this.booksRef.remove(key);
   }
   
 }
