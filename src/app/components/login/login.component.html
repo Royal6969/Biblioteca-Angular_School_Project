@@ -1,0 +1,28 @@
+<!-- <p>login works!</p> -->
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+          <b>Login</b>
+        </div>
+        
+        <div class="card-body p-4">
+            
+            <label style="float: left;">Name</label>
+            <input class="form-control m-2" type="email" placeholder="Introduzca su email" [(ngModel)]="user.email">
+            
+            <label style="float: left;">Password</label>
+            <input class="form-control m-2" type="password" placeholder="Ingtroduzca su contraseña" [(ngModel)]="user.password">
+        
+            <button class="btn btn-primary btn-block m-2" (click)="login()">Ingresar</button>
+            <button class="btn btn-info btn-block m-2" (click)="loginWithGoogle()">Google</button>
+            <label>¿Aún no tienes cuenta?<a routerLink="/register">Registrarse</a></label>
+        
+            <div>
+                <button class="btn btn-info btn-block m2" (click)="getUserInfo()">Usuario Logeado</button>
+                <button class="btn btn-info btn-block m2" (click)="logout()">Logout</button>
+            </div>
+        </div>
+
+    </div>
+</div>

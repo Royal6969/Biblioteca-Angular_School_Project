@@ -4,8 +4,11 @@ li {
 
 /****************** navbar v2 *****************/
 
-.spacer {
-    flex: 1 1 auto;
+.spacer1 {
+    width: 30%;
+}
+.spacer2 {
+    width: 30%;
 }
 /*
 a {

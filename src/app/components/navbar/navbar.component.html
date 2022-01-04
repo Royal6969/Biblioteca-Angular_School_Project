@@ -9,8 +9,10 @@
 
         <img [routerLink]="['/']" src="../../../assets/library.jpg" class="logo">
 
+        <div class="spacer1"></div>
+
         <ul>
-            <li class="list">
+            <li class="list" *ngIf="userInfo | async as user">
                 <a [routerLink]="['/']">
                     <span class="icon material-icons">
                         home
@@ -19,7 +21,7 @@
                 </a>
             </li>
 
-            <li class="list">
+            <li class="list" *ngIf="userInfo | async as user">
                 <a [routerLink]="['/book-list']">
                     <span class="icon material-icons">
                         menu_book
@@ -37,7 +39,7 @@
                 </a>
             </li> -->
 
-            <li class="list">
+            <li class="list" *ngIf="userInfo | async as user">
                 <a [routerLink]="['/add-book-fire']">
                     <span class="icon material-icons">
                         bookmark_add
@@ -46,7 +48,7 @@
                 </a>
             </li>
 
-            <li class="list">
+            <li class="list" *ngIf="userInfo | async as user">
                 <a [routerLink]="['/add-book-rtdb']">
                     <span class="icon material-icons">
                         bookmark_add
@@ -55,7 +57,7 @@
                 </a>
             </li>
 
-            <li class="list">
+            <li class="list" *ngIf="userInfo | async as user">
                 <a [routerLink]="['/clientes-v2']">
                     <span class="icon material-icons">
                         people
@@ -64,7 +66,7 @@
                 </a>
             </li>
 
-            <li class="list">
+            <li class="list" *ngIf="userInfo | async as user">
                 <a [routerLink]="['/add-customer']">
                     <span class="icon material-icons">
                         person_add
@@ -73,14 +75,34 @@
                 </a>
             </li>
 
-            <li class="list">
-                <a [routerLink]="['/']">
+            <!-- <li class="list">
+                <a [routerLink]="['/login']">
                     <span class="icon material-icons">
                         person_outline
                     </span>
-                    <span class="text">Login</span>
+                    <span class="text">Profile</span>
                 </a>
-            </li>
+            </li> -->
+
+            <div class="spacer2"></div>
+
+            <div ngbDropdown class="d-inline-block" *ngIf="userInfo | async as user; else LoginButton">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                    <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{user.photoURL}}" width="30" height="30"
+                        class="d-inline-block align-top" alt="">
+                    {{user.email}}
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem routerLink="/panel-control">Panel de control</button>
+                    <button ngbDropdownItem routerLink="/login" (click)="logout()">Salir</button>
+                </div>
+            </div>
+        
+            <ng-template #LoginButton>
+                <button class="btn btn-primary" routerLink="/login"> Ingresar</button>
+            </ng-template>
+
+            
 
         </ul>
     </div>

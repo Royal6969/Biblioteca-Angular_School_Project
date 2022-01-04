@@ -16,13 +16,15 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireAuthModule, USE_DEVICE_LANGUAGE } from '@angular/fire/compat/auth';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material.module';
+
 import { RealTimeDBService } from './services/real-time-db.service';
 import { FirestoreService } from './services/firestore.service';
+
 import { AddBookRtdbComponent } from './components/add-book-rtdb/add-book-rtdb.component';
 import { AddBookFireComponent } from './components/add-book-fire/add-book-fire.component';
 import { EditBookFireComponent } from './components/edit-book-fire/edit-book-fire.component';
@@ -36,6 +38,14 @@ import { EditCustomerComponent } from './components/edit-customer/edit-customer.
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { DeleteCustomerComponent } from './components/delete-customer/delete-customer.component';
 
+// import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
+// import { LANGUAGE_CODE } from '@angular/fire/compat/auth';
+// import { PERSISTENCE } from '@angular/fire/compat/auth';
+// import { TENANT_ID } from '@angular/fire/compat/auth';
+
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { PanelControlComponent } from './components/panel-control/panel-control.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +66,10 @@ import { DeleteCustomerComponent } from './components/delete-customer/delete-cus
     AddCustomerComponent,
     EditCustomerComponent,
     CustomerDetailsComponent,
-    DeleteCustomerComponent
+    DeleteCustomerComponent,
+    LoginComponent,
+    RegisterComponent,
+    PanelControlComponent
   ],
   imports: [
     BrowserModule,
@@ -68,11 +81,17 @@ import { DeleteCustomerComponent } from './components/delete-customer/delete-cus
     AngularFireModule.initializeApp(environment.firebase, 'library'), // optionally provide a custom firebase application name
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     NgbModule
   ],
   providers: [
     RealTimeDBService,
-    FirestoreService
+    FirestoreService,
+
+    // { provide: USE_DEVICE_LANGUAGE, useValue: true },
+    // { provide: LANGUAGE_CODE, useValue: 'fr' },
+    // { provide: PERSISTENCE, useValue: 'session' },
+    // { provide: TENANT_ID, useValue: 'tenant-id-app-one' }
   ],
   bootstrap: [AppComponent]
 })

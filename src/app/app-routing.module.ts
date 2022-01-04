@@ -15,6 +15,9 @@ import { EditBookFireComponent } from './components/edit-book-fire/edit-book-fir
 import { EditBookRtdbComponent } from './components/edit-book-rtdb/edit-book-rtdb.component';
 import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { PanelControlComponent } from './components/panel-control/panel-control.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -84,6 +87,18 @@ const routes: Routes = [
   {
     path: 'delete-customer',
     component: DeleteCustomerComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'panel-control',
+    component: PanelControlComponent
   }
 ];
 
