@@ -48,10 +48,13 @@ export class EditBookFireComponent implements OnInit {
   }
 
   updateBook() {
-    console.log(this.bookForm.valid);
+    //console.log(this.bookForm.valid);
 
     if (this.bookForm.valid) {
       this.firestoreService.updateBook(this.book.id, this.bookForm.value);
+      
+      console.log(this.book);
+      console.log(this.bookForm);
       
       this.router.navigate(["book-list"]);
     

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RealTimeDBService } from 'src/app/services/real-time-db.service';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { Book } from 'src/app/interfaces/book';
-import { AngularFireObject } from '@angular/fire/compat/database';
 import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({

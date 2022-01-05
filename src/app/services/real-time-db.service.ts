@@ -24,11 +24,11 @@ export class RealTimeDBService {
     this.booksRef = angularFireDatabse.list(this.dbPath);
   }
 
-  getBooks() {
-    this.books = this.angularFireDatabse.list('/books') as AngularFireList<Book[]>;
+  // getBooks() {
+  //   this.books = this.angularFireDatabse.list('/books') as AngularFireList<Book[]>;
 
-    return this.books;
-  }
+  //   return this.books;
+  // }
 
   getBooks_v2(): AngularFireList<BookModel> {
     return this.booksRef;
@@ -56,18 +56,18 @@ export class RealTimeDBService {
       return this.unreadBooks;
   }
 
-  getBookDetails(id: any) {
-    this.bookDetails = this.angularFireDatabse.object('/books/' + id) as AngularFireObject<Book>;
+  // getBookDetails(id: any) {
+  //   this.bookDetails = this.angularFireDatabse.object('/books/' + id) as AngularFireObject<Book>;
 
-    return this.bookDetails;
-  }
+  //   return this.bookDetails;
+  // }
 
-  addBook(bookDetails: any) {
-    var filteredBook = JSON.parse(JSON.stringify(bookDetails)); // removes the undefined fields
+  // addBook(bookDetails: any) {
+  //   var filteredBook = JSON.parse(JSON.stringify(bookDetails)); // removes the undefined fields
 
-    console.log('Filtered Book - ',filteredBook);
-    return this.books?.push(filteredBook);
-  }
+  //   console.log('Filtered Book - ',filteredBook);
+  //   return this.books?.push(filteredBook);
+  // }
 
   addBook_v2(book: Book): any {
     return this.booksRef.push(book);
@@ -81,7 +81,7 @@ export class RealTimeDBService {
   //   return `${year}-${month}-${day}`;
   // }
 
-  updateBook(id: any, bookDetails: any) {
+  updateBook(id: any, bookDetails: any) { // método de updateBook() obsoleto
     var filteredBook = JSON.parse(JSON.stringify(bookDetails)); // removes the undefined fields
 
     return this.books?.update(id, filteredBook);
@@ -91,9 +91,9 @@ export class RealTimeDBService {
     return this.booksRef.update(key, value);
   }
 
-  deleteBook(id: any) {
-    return this.books?.remove(id);
-  }
+  // deleteBook(id: any) {
+  //   return this.books?.remove(id);
+  // }
 
   deleteBook_v2(key: string): Promise<void> {
     return this.booksRef.remove(key);

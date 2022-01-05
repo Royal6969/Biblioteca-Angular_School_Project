@@ -78,7 +78,7 @@ export class AddBookComponent implements OnInit {
     }
 
     console.log('Book - ',book);
-    this.realTimeDBService.addBook(book);
+    // this.realTimeDBService.addBook(book); // el método addBook ya está obsoleto al igual que este componente
 
     this.router.navigate(['book-list']);
   }

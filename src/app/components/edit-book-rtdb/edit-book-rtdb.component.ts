@@ -88,6 +88,8 @@ export class EditBookRtdbComponent implements OnInit, OnChanges {
         this.realTimeDBService.updateBook_v2(this.book.key, this.bookForm.value)
           .then(() => this.message = 'The tutorial was updated successfully!')
           .catch(err => console.log(err));
+        console.log(this.book);
+        console.log(this.bookForm);
       }
       
       this.router.navigate(["book-list"]);

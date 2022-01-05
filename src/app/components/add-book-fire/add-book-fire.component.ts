@@ -36,11 +36,9 @@ export class AddBookFireComponent implements OnInit {
   /* ------------------------------------------- Methods for Firestore -----------------------------------------------*/
 
   createBook() {
-    console.log(this.bookForm.valid);
-
     if (this.bookForm.valid) {
       this.firestoreService.createBook(this.bookForm.value);
-
+      console.log(this.bookForm);
       this.router.navigate(['book-list']);
     
     } else {
