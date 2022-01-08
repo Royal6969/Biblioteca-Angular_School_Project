@@ -31,12 +31,7 @@ export class BookListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.realTimeDBService.getBooks().valueChanges() // para obtener los libros de la RealTimeDB
-    //   .subscribe((books) => {
-    //     this.allBooksRealTimeDB = books;
-    //   })
-
-    this.getAllBooks_v2();
+    this.getAllBooks_v2(); // para obtener los libros de la RealTimeDB
 
     this.getAllBooks(); // para obtener los libros de Firestore
   }
@@ -65,7 +60,6 @@ export class BookListComponent implements OnInit {
       this.allBooksRealTimeDB_v2 = data;
       //console.log(this.allBooksRealTimeDB_v2);
     });
-    //console.log(this.allBooksRealTimeDB_v2);
   }
 
   getBookDetails(book: any){

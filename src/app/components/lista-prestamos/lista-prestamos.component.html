@@ -1,0 +1,36 @@
+<!-- <p>lista-prestamos works!</p> -->
+
+<br>
+
+<div class="container">
+  <table class="table table-hover">
+
+    <thead>
+      <tr class="table-secondary">
+        <th scope="col">cliente</th>
+        <th scope="col">libro</th>
+        <th scope="col">fecha préstamo</th>
+        <th scope="col">fecha devolución</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let prestamo of prestamos" class="table-light">
+        <th scope="row">{{prestamo.data.customer_name}}</th>
+
+        <td>{{prestamo.data.book_title}}</td>
+
+        <td>{{prestamo.data.date_booking.toDate()}}</td>
+
+        <div *ngIf="prestamo.data.date_end_booking != null">
+          <td>{{prestamo.data.date_end_booking.toDate()}}</td>
+        </div>
+
+        <div *ngIf="prestamo.data.date_end_booking == null">
+          <td><button type="button"  (click)="finalizarPrestamo(prestamo)" class="btn btn-info m-1">Devolver</button></td>
+        </div>    
+      </tr>
+    </tbody>
+    
+  </table>
+</div>

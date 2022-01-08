@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList, AngularFireObject, AngularFireAction } from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs/';
 import { map } from 'rxjs/operators';
 import { Book } from '../interfaces/book';
@@ -90,10 +90,6 @@ export class RealTimeDBService {
   updateBook_v2(key: string, value: any): Promise<void> {
     return this.booksRef.update(key, value);
   }
-
-  // deleteBook(id: any) {
-  //   return this.books?.remove(id);
-  // }
 
   deleteBook_v2(key: string): Promise<void> {
     return this.booksRef.remove(key);

@@ -38,10 +38,18 @@
                 <!-- <button mat-raised-button color="warn" (click)="getBookDeleteRTDB(book)"> <i class="material-icons">delete_sweep</i> Delete In RealTimeDB</button> -->
                 
                 <button class="button-details" [routerLink]="['/book-list']"><a routerLinkActive="router-link-active"  style="--clr:#4da9ff;--i:0;"><span>All Books</span></a></button>
-                <button class="button-details" (click)="getBookEditFire(book)"><a routerLinkActive="router-link-active"  style="--clr:#d6cd52;--i:0;"><span>Edit Book</span></a></button>
+                <button class="button-details" (click)="getBookEditFire(book)" *ngIf="book.prestamo == null; else elseBlock"><a routerLinkActive="router-link-active"  style="--clr:#d6cd52;--i:0;"><span>Edit Book</span></a></button>
+                <ng-template #elseBlock>
+                    <button class="button-details" disabled (click)="getBookEditFire(book)"><a routerLinkActive="router-link-active"  style="--clr:#d6cd52;--i:0;"><span>Edit Book</span></a></button>
+                </ng-template>
+
                 <button class="button-details" (click)="getBookDeleteFire(book)"><a routerLinkActive="router-link-active"  style="--clr:#f86464;--i:0;"><span>Delete Fire</span></a></button>
                 <button class="button-details" (click)="getBookDeleteRTDB(book)"><a routerLinkActive="router-link-active"  style="--clr:#ff8f44;--i:0;"><span>Delete RTDB</span></a></button>
-
+                
+                <button class="button-details" (click)="getBookBookingFire(book)" *ngIf="book.prestamo == null; else elseBlock2"><a routerLinkActive="router-link-active"  style="--clr:#d793ff;--i:0;"><span>Booking Fire</span></a></button>
+                <ng-template #elseBlock2>
+                    <button class="button-details" (click)="finalizarPrestamo(book.prestamo)"><a routerLinkActive="router-link-active"  style="--clr:#d793ff;--i:0;"><span>Devolver Libro</span></a></button>
+                </ng-template>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -91,6 +99,7 @@
                 <button class="button-details" (click)="getBookEditRTDB(book)"><a routerLinkActive="router-link-active"  style="--clr:#d6cd52;--i:0;"><span>Edit Book</span></a></button>
                 <button class="button-details" (click)="getBookDeleteFire(book)"><a routerLinkActive="router-link-active"  style="--clr:#f86464;--i:0;"><span>Delete Fire</span></a></button>
                 <button class="button-details" (click)="getBookDeleteRTDB(book)"><a routerLinkActive="router-link-active"  style="--clr:#ff8f44;--i:0;"><span>Delete RTDB</span></a></button>
+                <!-- <button class="button-details" (click)="getBookDeleteRTDB(book)"><a routerLinkActive="router-link-active"  style="--clr:#d793ff;--i:0;"><span>Booking RTDB</span></a></button> -->
             </mat-card-actions>
         </mat-card>
     </div>

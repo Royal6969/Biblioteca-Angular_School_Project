@@ -46,6 +46,10 @@ import { DeleteCustomerComponent } from './components/delete-customer/delete-cus
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PanelControlComponent } from './components/panel-control/panel-control.component';
+import { ListaPrestamosComponent } from './components/lista-prestamos/lista-prestamos.component';
+import { CrearPrestamoFireComponent } from './components/crear-prestamo-fire/crear-prestamo-fire.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,11 @@ import { PanelControlComponent } from './components/panel-control/panel-control.
     DeleteCustomerComponent,
     LoginComponent,
     RegisterComponent,
-    PanelControlComponent
+    PanelControlComponent,
+    ListaPrestamosComponent,
+    CrearPrestamoFireComponent,
+    InicioComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

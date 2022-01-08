@@ -2,9 +2,11 @@
 
 <div class="container">
     <div class="card text-center">
+
       <div class="card-header">
         <b> REGISTRO</b>
       </div>
+
       <div class="card-body p-4">
         <label style="float: left;">Nombre</label>
         <input class="form-control m-2" type="email" placeholder="ingrese su nombre" [(ngModel)]="user.name">
@@ -16,10 +18,8 @@
         <input class="form-control m-2" type="password" placeholder="ingrese su password" [(ngModel)]="user.password">
   
         <button class="btn btn-primary btn-block m-2" (click)="register()">Registrar</button>
-        <!-- <button class="btn btn-info btn-block m-2" (click)="IngresarConGoogle()">Ingresar con google</button> -->
         <label>Ya tenes cuenta? <a routerLink="/login">Ingresar</a></label>
       </div>
   
-  
     </div>
-  </div>
+</div>

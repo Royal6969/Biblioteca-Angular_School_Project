@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddBookFireComponent } from './components/add-book-fire/add-book-fire.component';
 import { AddBookRtdbComponent } from './components/add-book-rtdb/add-book-rtdb.component';
-import { AddBookComponent } from './components/add-book/add-book.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { ClientesV2Component } from './components/clientes-v2/clientes-v2.component';
+import { CrearPrestamoFireComponent } from './components/crear-prestamo-fire/crear-prestamo-fire.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { DeleteBookFireComponent } from './components/delete-book-fire/delete-book-fire.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
@@ -15,33 +15,34 @@ import { EditBookFireComponent } from './components/edit-book-fire/edit-book-fir
 import { EditBookRtdbComponent } from './components/edit-book-rtdb/edit-book-rtdb.component';
 import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
 import { HomeComponent } from './components/home/home.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { ListaPrestamosComponent } from './components/lista-prestamos/lista-prestamos.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PanelControlComponent } from './components/panel-control/panel-control.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: HomeComponent
+  // },
   {
-    path: '',
-    component: HomeComponent
+    path: 'inicio',
+    component: InicioComponent
   },
   {
     path: 'book-list',
     component: BookListComponent
   },
   {
-    // path: 'book-details/:id',
     path: 'book-details',
     component: BookDetailsComponent
   },
   {
-    // path: 'book-details/:id',
     path: 'book-details-rtdb',
     component: BookDetailsComponent
   },
-  // {
-  //   path: 'add-book',
-  //   component: AddBookComponent
-  // },
   {
     path: 'add-book-fire',
     component: AddBookFireComponent
@@ -51,7 +52,6 @@ const routes: Routes = [
     component: AddBookRtdbComponent
   },
   {
-    // path: 'edit-book-rtdb/:id',
     path: 'edit-book-rtdb',
     component: EditBookRtdbComponent
   },
@@ -60,7 +60,6 @@ const routes: Routes = [
     component: EditBookFireComponent
   },
   {
-    // path: 'delete-book/:id',
     path: 'delete-book',
     component: DeleteBookComponent
   },
@@ -99,6 +98,27 @@ const routes: Routes = [
   {
     path: 'panel-control',
     component: PanelControlComponent
+  },
+  {
+    path: 'crear-prestamo-fire',
+    component: CrearPrestamoFireComponent
+  },
+  {
+    path: 'lista-prestamos',
+    component: ListaPrestamosComponent
+  },
+  {
+    path: 'inicio',
+    component: InicioComponent
+  },
+  {
+    path: '',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 

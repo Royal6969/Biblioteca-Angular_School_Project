@@ -1,0 +1,40 @@
+<!-- <p>inicio works!</p> -->
+
+<div class="body">
+	<!-- ------------------------- Header Video --------------------------- -->
+
+	<div class="v-header container">
+            
+		<div class="fullscreen-video-wrap">
+	
+			<video id="miVideo" autoplay muted loop>
+				<source src="../../../assets/library.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="header-overlay">
+			<div class="header-content">
+				<h1>Hola Lector</h1>
+				<p>Mi nombre es Sergio, y esto es una práctica de Angular!
+					<br>
+					Este ejericio tiene de base todo lo que ya se hizo en el ejercicio de Videojuegos y Coches,
+					<br> 
+					Lo nuevo de este proyecto es que se enfoca en el aprender a usar Firebase y sus diferentes servicios.<br>
+					Se trata de una web desarrollada para ser utilizada por el personal bibliotecario de la recepción,<br>
+					la cual permite ver el listado de libros disponibles en la biblioteca, un listado cuyos libros,<br>
+					están almacenados en las bases de datos de Firestore y RealTimeDatabase, llevando cada una su propio CRUD,<br>
+					para poder crear, leer, actualizar y eliminar los libros desde las funcionalidades de la propia web.<br>
+					En el servicio de la RealTimeDB he usado tipos propios de Firebase como el AngularFireList y AngularFireObject.<br>
+					He enviado objetos a través de rutas, recibiéndolos en otros componentes gracias a Router y NavigationExtras,<br>
+					así como poder controlar rutas y el acceso a diversos componentes con el método de getCurrentNavigation() de Router.<br>
+					Los datos del objeto se han controlado en los formularios con FormControl, FormGroup, Validators de AngularForms.<br>
+					Para el login se ha utilizado el módulo AngularFireAuth con métodos propios como el signInWithPopup() provisto por Google,<br>
+					y respecto a los estilos se volvío a instalar AngularMaterial y se importaron las librerías de Bootstrap y Bootswatch.
+					</p>
+				<br><br><br>
+				<a class="btn" routerLink='/login'>Vamos allá !</a>
+			</div>
+		</div>
+		
+	</div>
+</div>

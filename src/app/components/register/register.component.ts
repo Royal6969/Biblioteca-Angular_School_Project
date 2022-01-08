@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
         this.registerService.crear('users', this.user);
       };
 
-      this.router.navigate(['/panel-control']);
+      this.router.navigate(['/book-list']);
 
     }).catch(err => {
       console.log(err)

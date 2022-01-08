@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +30,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(email, password).then((res) => {
       console.log("Se registró: ", res);
     })
+
+    this.router.navigate(['/book-list']);
   }
 
   loginWithGoogle() {
@@ -38,6 +42,8 @@ export class LoginComponent implements OnInit {
     this.authService.loginWithGoogle(email, password).then((res) => {
       console.log("Se registró: ", res);
     })
+
+    this.router.navigate(['/book-list']);
   }
 
   getUserInfo() {

@@ -61,7 +61,7 @@ md-grid-tile{
 
 .a{
     position: relative;
-    width: 160px;
+    width: 100%;
     height: 50px;
     background: #222;
     text-decoration: none;
@@ -76,7 +76,7 @@ md-grid-tile{
 .box-2 .a, 
 .box-3 .a{
     position: relative;
-    width: 160px;
+    width: 100%;
     height: 50px;
     /* margin: 15px 10px; */
     margin-left: 30%;

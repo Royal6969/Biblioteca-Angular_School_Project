@@ -1,0 +1,26 @@
+<!-- <p>crear-prestamo-fire works!</p> -->
+
+<mat-toolbar>Crear Préstamo para el libro: {{ book.data.title }}</mat-toolbar>
+
+<div class="add-book-form" *ngIf="customers != null || customers != undefined">
+    <a [routerLink]="['/book-list']">Back</a>
+
+    <form #myForm="ngForm" [formGroup]="bookingForm">
+
+        <mat-form-field>
+            <mat-select placeholder="Select Customer" name="customer" id="customer" required formControlName="customer">
+                <ng-container>
+                    <mat-option *ngFor="let customer of customers" [value]="customer">{{ customer.data.name }}</mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        
+        <br>
+        <hr>
+
+        <button class="a" [disabled]="!myForm.form.valid" (click)="generateBooking()">Booking Book</button>
+
+        <br><br>
+
+    </form>
+</div>
