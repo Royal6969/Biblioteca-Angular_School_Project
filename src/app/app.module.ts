@@ -86,7 +86,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    AngularFireModule.initializeApp(environment.firebase, 'library'), // optionally provide a custom firebase application name
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
