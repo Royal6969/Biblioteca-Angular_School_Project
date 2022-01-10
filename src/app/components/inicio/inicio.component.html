@@ -32,7 +32,11 @@
 					y respecto a los estilos se volvío a instalar AngularMaterial y se importaron las librerías de Bootstrap y Bootswatch.
 					</p>
 				<br><br><br>
-				<a class="btn" routerLink='/login'>Vamos allá !</a>
+				<!-- <a class="btn" routerLink='/login' *ngIf="userInfo | async as user; else GoButton">Login !</a> -->
+				<a class="btn" (click)="goToBookList()" *ngIf="userInfo | async as user; else GoButton">Vamos allá !</a>
+				<ng-template #GoButton>
+					<a class="btn" routerLink='/login'>Login !</a>
+				</ng-template>
 			</div>
 		</div>
 		
